@@ -32,7 +32,7 @@ def registration(request):
             user_obj.save()
             profile_obj = Profile.objects.create(user=user_obj)
             profile_obj.save()
-            return redirect('/user_profile/')
+            return redirect('/Login/')
 
         except Exception as e:
             print(e)
@@ -56,7 +56,7 @@ def user_profile(request):
             user=request.user
         )
         setup_profile.save()
-        return redirect('/Login/')
+        return redirect('/tenant_dashboard/')
 
     dict = {}
 
@@ -78,8 +78,17 @@ def User_login(request):
             return redirect('/Login/')
 
         login(request, user)
-        return redirect('/tenant_dashboard/')
+        
+        if UserProfile.objects.filter(user=user_obj):
+            return redirect('/tenant_dashboard/')
+        else:
+            return redirect('/user_profile')
 
     dict = {}
 
     return render(request, 'App_Login/login.html', context=dict)
+
+@login_required
+def logoutUser(request):
+    logout(request)
+    return redirect('Login')
