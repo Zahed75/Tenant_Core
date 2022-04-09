@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_block %} Profile_Setup {% endblock %}
+{% block body_block %}
+    <!-- Content -->
+    <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+
+        <div class="w3-panel">
+            <h1><b>Sapphire Housing Ltd.</b></h1>
+            <h5><b>Get the keys, Live at Ease!</b></h5>
+        </div>
+
+        <!-- Slideshow -->
+        <div class="w3-container">
+            <div class="w3-display-container mySlides">
+                <img src="{% static 'img/apartment.jpg' %}" style="width:100%">
+                <div class="w3-display-topleft w3-container w3-padding-32">
+                    <span class="w3-white w3-padding-large w3-animate-bottom">Sapphire</span>
+                </div>
+            </div>
+
+
+            <!-- Grid -->
+            <div class="w3-row w3-container">
+                <div class="w3-center w3-padding-64">
+                    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What We Offer</span>
+                </div>
+                <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
+                    <h3>Apartments</h3>
+                    <p>Affordability meets luxury, south-faced apartment with quite surrounding that fulfills every
+                        desire
+                        for a premium class lifestyle.</p>
+                </div>
+
+                <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
+                    <h3>House Rental Service</h3>
+                    <p>The perfect fit for those who desire a modern, contemporary lifestyle. For the first time we
+                        offer
+                        you a unique rental management system just in our apartment!</p>
+                </div>
+
+                <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
+                    <h3>Appealing Amneties</h3>
+                    <p>All the lifestyle amenities required for modern family living. Includes gymnasium to laundry,
+                        community hall and 2-stored underground parking lot. </p>
+                </div>
+
+                <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
+                    <h3>Promises</h3>
+                    <p>Our apartment provides intense care and fast response in any circumstances. We care our tenants
+                        as
+                        family. So their satisfaction cheers our high spirit!</p>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="w3-row-padding" id="plans">
+                <div class="w3-center w3-padding-64">
+                    <h3>Rental Plans</h3>
+                    <p>Choose your desired apartment!</p>
+                </div>
+
+                <div class="w3-third w3-margin-bottom">
+                    <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+                        <li class="w3-black w3-xlarge w3-padding-32">Dream</li>
+                        <li class="w3-padding-16"><b>1800</b> Squarefeet</li>
+                        <li class="w3-padding-16"><b>24h</b> Water & Electricity</li>
+                        <li class="w3-padding-16"><b>24h</b> Security</li>
+                        <li class="w3-padding-16"><b>3 Bed</b> 3 bath 2 Balcony</li>
+                        <li class="w3-padding-16">
+                            <h2 class="w3-wide">30000৳</h2>
+                            <span class="w3-opacity">per month + service charge</span>
+                        </li>
+                        <li class="w3-light-grey w3-padding-24">
+                            <button class="w3-button w3-green w3-padding-large">Book Now</button>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="w3-third w3-margin-bottom">
+                    <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+                        <li class="w3-dark-grey w3-xlarge w3-padding-32">Luxury</li>
+                        <li class="w3-padding-16"><b>2400</b> Squarefeet</li>
+                        <li class="w3-padding-16"><b>24h</b> Water & Electricity</li>
+                        <li class="w3-padding-16"><b>24h</b> Security + Parking Facility</li>
+                        <li class="w3-padding-16"><b> 4 Bed </b> 4 bath 3 balcony</li>
+                        <li class="w3-padding-16">
+                            <h2 class="w3-wide">45000৳</h2>
+                            <span class="w3-opacity">per month + service charge</span>
+                        </li>
+                        <li class="w3-light-grey w3-padding-24">
+                            <button class="w3-button w3-green w3-padding-large">Book Now</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="w3-third w3-margin-bottom">
+                    <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+                        <li class="w3-black w3-xlarge w3-padding-32">Parking</li>
+                        <li class="w3-padding-16"><b>Washing</b> Facilities</li>
+                        <li class="w3-padding-16"><b>Restroom</b> included for drivers</li>
+                        <li class="w3-padding-16"><b>24h</b> Security</li>
+                        <li class="w3-padding-16"><b>24h</b> Car Access</li>
+                        <li class="w3-padding-16">
+                            <h2 class="w3-wide">5000৳</h2>
+                            <span class="w3-opacity">per month</span>
+                        </li>
+                        <li class="w3-light-grey w3-padding-24">
+                            <button class="w3-button w3-green w3-padding-large">Book Now</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="w3-row-padding" id="about">
+                <div class="w3-center w3-padding-64">
+                    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16"> Team Sapphire </span>
+                </div>
+
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4">
+                        <div class="w3-container">
+                            <h3>Syed Md. Minhazul Kibriya</h3>
+                            <p class="w3-opacity">System Developer</p>
+                            <p>Designed and developed main concept of this project. Worked for user interface
+                                section. </p>
+                            <p>
+                                <button class="w3-button w3-light-grey w3-block">Contact</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4">
+                        <div class="w3-container">
+                            <h3>Talha Mahmood Chy</h3>
+                            <p class="w3-opacity">Project Organizer</p>
+                            <p>Designed admin panel and orginized team Sapphire as leader.</p>
+                            <p>
+                                <button class="w3-button w3-light-grey w3-block">Contact</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4">
+                        <div class="w3-container">
+                            <h3>Mohammed Maruf Hossen</h3>
+                            <p class="w3-opacity">Web Authentication Developer</p>
+                            <p>Developed authentication unit of this project. Designed user and admin registration
+                                platform.</p>
+                            <p>
+                                <button class="w3-button w3-light-grey w3-block">Contact</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <div class="w3-container">
+                        <h3>Muhammad Adnan</h3>
+                        <p class="w3-opacity">Team Member</p>
+                        <p>Worked as team member.</p>
+                        <p>
+                            <button class="w3-button w3-light-grey w3-block">Contact</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <div class="w3-container">
+                        <h3>Tahasina Binte Tareq</h3>
+                        <p class="w3-opacity">Team Member</p>
+                        <p>Worked as team member.</p>
+                        <p>
+                            <button class="w3-button w3-light-grey w3-block">Contact</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <div class="w3-container">
+                        <h3>Farida Akter</h3>
+                        <p class="w3-opacity">Team Member</p>
+                        <p>Worked as team member.</p>
+                        <p>
+                            <button class="w3-button w3-light-grey w3-block">Contact</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="w3-row-padding" id="plans">
+                <div class="w3-center w3-padding-64">
+                    <h3> Contact Us</h3>
+                    <p><b>Call - 01700000123</b></p>
+                    <p><b>enquiry@sapphirebd.com</b></p>
+                    <p><b>www.sapphirebd.com</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>User | Sapphire Housing Ltd.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% block css_block %}
+        <style>
+            html, body, h1, h2, h3, h4, h5 {
+                font-family: "Raleway", sans-serif
+            }
+        </style>
+    {% endblock %}
+</head>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+    <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i
+            class="fa fa-bars"></i>  Menu
+    </button>
+    <span class="w3-bar-item w3-Left">Sapphire Housing Ltd.</span>
+    <a href="index.html"><span
+        <button class="w3-button w3-dark-grey w3-right">Log out</button>
+        </span></a>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+    <div class="w3-container w3-row">
+        <div class="w3-col s4">
+            <img src="{% static 'img/tenant.jpg' %}" class="w3-circle w3-margin-right" style="width:46px">
+        </div>
+        <div class="w3-col s8 w3-bar">
+            <span>Welcome, <strong>Tenant</strong></span><br>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+        </div>
+    </div>
+    <hr>
+    <div class="w3-container">
+
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+     title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+    <!-- Header -->
+    <header class="w3-container" style="padding-top:22px">
+        <h5><b><i class="fa fa-dashboard"></i> Tenant Dashboard</b></h5>
+    </header>
+
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-quarter">
+            <div class="w3-container w3-red w3-padding-16">
+                <div class="w3-right"></i></div>
+                <div class="w3-left">
+                    <h3>Messages</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>2</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-blue w3-padding-16">
+                <div class="w3-right"></div>
+                <div class="w3-left">
+                    <h3>Total dues</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>48800৳</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-teal w3-padding-16">
+                <div class="w3-right"></div>
+                <div class="w3-left">
+                    <h3>Bill remaining</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>5000৳</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-orange w3-text-white w3-padding-16">
+                <div class="w3-right"></div>
+                <div class="w3-left">
+                    <h3>Members</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>5</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-panel">
+        <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-third">
+            </div>
+            <div class="w3-twothird">
+                <div class="payment">
+                    {% for x in  apt_info %}
+                        <h5>Payment Details <span class="w3-opacity w3-large">{{ x.date }}</span></h5>
+                        <h4>{{ x.user }}</h4>
+                        <p>{{ x.flat_no }}</p>
+                    {% endfor %}
+                </div>
+
+                <table class="w3-table w3-striped w3-white">
+                    {% for x in  t_dashboard %}
+                        <tr>
+
+                            <td>{{ x.serial }}</td>
+                            <td>{{ x.types_of_bill }}</td>
+                            <td>{{ x.bill }}</td>
+
+                        </tr>
+                    {% endfor %}
+                    {#  total amount jabe#}
+
+
+                    <tr>
+
+                        <td></td>
+                        <td><b>Total Amount</b></td>
+                        <td><b>48800৳</b></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="w3-container">
+        <div class="w3-grey">
+
+        </div>
+    </div>
+    <hr>
+
+    <div class="w3-container">
+        <h5></h5>
+    </div>
+    <hr>
+    <div class="w3-container">
+        <h5>Choose your payment method</h5>
+        <ul class="w3-ul w3-card-4 w3-white">
+            <li class="w3-padding-16">
+                <img src="{% static 'img/bkash-logo.png' %}" class="w3-left w3-circle w3-margin-right"
+                     style="width:35px">
+                <span class="w3-xlarge">Bkash</span><br>
+            </li>
+            <li class="w3-padding-16">
+                <img src="{% static 'img/nagad.jpg' %}" class="w3-left w3-circle w3-margin-right" style="width:35px">
+                <span class="w3-xlarge">Nagad</span><br>
+            </li>
+            <li class="w3-padding-16">
+                <img src="{% static 'img/visa.jpg' %}" class="w3-left w3-circle w3-margin-right" style="width:35px">
+                <span class="w3-xlarge">VISA | Mastercard</span><br>
+            </li>
+        </ul>
+        <h5></h5>
+
+        <button class="w3-button w3-dark-grey w3-right">Pay Now<i class="fa fa-arrow-right"></i></button>
+    </div>
+    <hr>
+
+    <div class="w3-container">
+        <h5>Message updates</h5>
+        <div class="w3-row">
+            <div class="w3-col m2 text-center">
+                <img class="w3-circle" src="{% static 'img/mota.jpg' %}" style="width:96px;height:96px">
+            </div>
+            <div class="w3-col m10 w3-container">
+                <h4>Landlord <span class="w3-opacity w3-medium">18 Mar, 2022, 3:12 PM</span></h4>
+                <p>Please pay your house rent of next month within 5th April,2022</p><br>
+            </div>
+        </div>
+
+        <div class="w3-row">
+            <div class="w3-col m2 text-center">
+                <img class="w3-circle" src="{% static 'img/russell.jpg' %}" style="width:96px;height:96px">
+            </div>
+            <div class="w3-col m10 w3-container">
+                <h4>Manager <span class="w3-opacity w3-medium">15 Mar, 2022, 12:15 PM</span></h4>
+                <p>The maintenance work of elevator will be done in 16 Mar, 2022. </p><br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="w3-container w3-dark-grey w3-padding-32">
+        <div class="w3-row">
+            <div class="w3-container w3-third">
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-16 w3-light-grey">
+            <h4><b>Get the keys, Live at ease!</b></h4>
+            <h5><b>Sapphire Housing Ltd.</b></h5>
+            <p>Contact - 01700000123 Email - support@sapphirebd.com</p>
+            <p>©All rights reserved by Sapphire housing Ltd.</p>
+        </footer>
+
+        <!-- End page content -->
+    </div>
+
+    <script>
+        // Get the Sidebar
+        var mySidebar = document.getElementById("mySidebar");
+
+        // Get the DIV with overlay effect
+        var overlayBg = document.getElementById("myOverlay");
+
+        // Toggle between showing and hiding the sidebar, and add overlay effect
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+                overlayBg.style.display = "none";
+            } else {
+                mySidebar.style.display = 'block';
+                overlayBg.style.display = "block";
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+            overlayBg.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

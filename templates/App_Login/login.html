@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_block %} LOGIN {% endblock %}
+{% block body_block %}
+
+
+    </head>
+    <body a link='gray' vlink='black'>
+
+    <div class="container">
+        <div class="myform">
+            <form method="POST">
+                {% if messages %}
+
+                    {% for message in messages %}
+                        <div class="alert alert-info">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+
+                {% endif %}
+                {% csrf_token %}
+                <h2>SAPPHIRE HOUSING</h2>
+                <input name="username" type="text" placeholder="Username">
+                <input name="password" type="password" placeholder="Password">
+
+                <div class="login">
+                    <button class="btn btn-sm btn-success" type="submit">Login</button>
+                </div>
+                <div class="recover">
+                    <p class="recover"><br>
+                        <a href="#"> Forgot Password? </a>
+                    </p>
+
+                    <div class="not-member"><br> For Registration
+                        <a href=""> Click Here </a>
+                    </div>
+                    <br/>
+                    <div class="nav-item dropdown">
+                        Or Let's go back to <a href="" class="btn btn-primary">Home</a>
+                    </div>
+                    <br><br><br>
+                    <p> © Sapphire </p>
+                </div>
+
+            </form>
+        </div>
+        <div class="image">
+
+            <img src="{% static 'img/buildingimage.jpg' %}">
+        </div>
+
+    </div>
+
+{% endblock %}
